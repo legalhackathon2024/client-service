@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  client-db:
+    container_name: client-db
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: client_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5435:5432"
+    volumes:
+      - user-db-data:/var/lib/postgresql/data
+volumes:
+  user-db-data:
